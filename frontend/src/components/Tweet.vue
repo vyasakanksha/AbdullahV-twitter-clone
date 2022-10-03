@@ -5,18 +5,7 @@
         <i class="fas fa-retweet"></i>
         Retweet
       </div>
-      <div class="tweet-actions-list-item">
-        <span @click.stop="editTweet()" class="with-count">
-          <ActionButton
-            iconClass="fas fa-pencil-alt"
-            default-color="#5B7083"
-            hover-color="#1DA1F2"
-            hover-bg="#E8F5FE"
-            text="Edit"
-            >Edit</ActionButton
-          >
-        </span>
-      </div>
+      <div class="tweet-actions-list-item"></div>
     </div>
 
     <div class="action-list3" v-if="actionList3">
@@ -52,7 +41,7 @@
       <img
         :src="
           infoForTweet.author.profileImage ||
-          'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'
+          'https://cdn-icons-png.flaticon.com/512/2017/2017715.png'
         "
         alt=""
       />
@@ -175,15 +164,17 @@
           ></ActionButton>
           <span class="count">{{ infoForTweet.replies.length }}</span>
         </span>
-        <span class="with-count" @click.stop="toggleRetweetActionVisible()">
+        <span @click.stop="editTweet()" class="with-count">
           <ActionButton
-            iconClass="fas fa-retweet"
+            iconClass="fas fa-pencil-alt"
             default-color="#5B7083"
-            hover-color="#17BF63"
-            hover-bg="#E0F2E8"
+            hover-color="#1DA1F2"
+            hover-bg="#E8F5FE"
+            text=""
           ></ActionButton>
-          <span class="count">{{ infoForTweet.commentCount }}</span>
         </span>
+        <span class="count">{{ infoForTweet.commentCount }}</span>
+        <!-- </span> -->
         <span
           v-if="
             !$store.state.currentUser.likedTweets.includes(infoForTweet._id)

@@ -37,8 +37,8 @@ export default new Vuex.Store({
     editTweetPopup: false,
     editProfilePopup: false,
     userId: localStorage.getItem("userId"),
-    hashtagRegex: /(?:(?<=\s)|^)#(\w*[A-Za-z_ğüşıöçĞÜŞİÖÇ]+\w*)/gi,
-    usernameRegex: /(?:(?<=\s)|^)@(\w*[A-Za-z_ğüşıöçĞÜŞİÖÇ]+\w*)/gi,
+    hashtagRegex: /(?:(?:\s)|^)#(\w*[A-Za-z_ğüşıöçĞÜŞİÖÇ]+\w*)/gi,
+    usernameRegex: /(?:(?:\s)|^)@(\w*[A-Za-z_ğüşıöçĞÜŞİÖÇ]+\w*)/gi,
 
     repliedTweet: {},
 
