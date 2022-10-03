@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
+  profileImage: String,
   joinedDate: { type: Date, default: Date.now },
   following: [{ type: Schema.Types.ObjectId, ref: "user" }],
   followers: [{ type: Schema.Types.ObjectId, ref: "user" }],

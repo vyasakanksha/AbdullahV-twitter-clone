@@ -66,23 +66,40 @@ app.post("/api/login", async (req, res) => {
 
 app.post("/api/register", (req, res) => {
   console.log(req.body);
+  profile_photos = [
+    "https://cdn-icons-png.flaticon.com/512/4166/4166800.png",
+    "https://cdn-icons-png.flaticon.com/512/2017/2017715.png",
+    "https://cdn-icons-png.flaticon.com/512/2017/2017790.png",
+    "https://cdn-icons-png.flaticon.com/512/2517/2517886.png",
+    "https://cdn-icons-png.flaticon.com/512/2017/2017788.png",
+    "https://cdn-icons-png.flaticon.com/512/7214/7214944.png",
+    "https://cdn-icons-png.flaticon.com/512/2865/2865666.png",
+    "https://cdn-icons-png.flaticon.com/512/2585/2585380.png",
+    "https://cdn-icons-png.flaticon.com/512/2517/2517840.png",
+    "https://cdn-icons-png.flaticon.com/512/6578/6578318.png",
+    "https://cdn-icons-png.flaticon.com/512/1532/1532946.png",
+  ];
   user.countDocuments({ username: req.body.username }, (err, count) => {
     if (err) throw err;
 
     if (count === 0) {
-      user
-        .create({
-          name: req.body.name,
-          username: req.body.username,
-          password: req.body.password,
-        })
-        .then((newUser) => {
-          console.log(`newUser from met: ${newUser}`);
-          res.send(newUser);
-        })
-        .catch((e) => {
-          throw e;
-        });
+      user.countDocuments({}, (err, countAll) => {
+        if (err) throw err;
+        user
+          .create({
+            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+            profileImage: profile_photos[count % 10],
+          })
+          .then((newUser) => {
+            console.log(`newUser from met: ${newUser}`);
+            res.send(newUser);
+          })
+          .catch((e) => {
+            throw e;
+          });
+      });
     } else {
       res.send(false);
     }
