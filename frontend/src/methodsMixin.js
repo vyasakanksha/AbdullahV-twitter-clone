@@ -138,6 +138,7 @@ export var methodsMixin = {
           this.$store.state.newTweet.text = "";
           this.$store.state.newTweet.image = "";
           this.$store.state.isLoading = false;
+          this.$store.state.addTweetPopup = false;
         });
     },
     addReply() {
@@ -164,6 +165,7 @@ export var methodsMixin = {
           this.$store.state.newTweet.text = "";
           this.$store.state.newTweet.image = "";
           this.$store.state.isLoading = false;
+          this.$store.state.addTweetPopup = false;
         });
     },
     editTweet() {
@@ -274,7 +276,7 @@ export var methodsMixin = {
             "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
           this.$store.state.newInfos.profileImage =
             this.$store.state.currentUser.profileImage ||
-            "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
+            "https://cdn-icons-png.flaticon.com/512/1425/1425291.png";
           this.$store.state.isLoading = false;
         });
     },
@@ -323,10 +325,10 @@ export var methodsMixin = {
         this.$store.state.currentUser.website || "";
       this.$store.state.newInfos.bannerImage =
         this.$store.state.currentUser.bannerImage ||
-        "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
+        "https://i.imgur.com/tnkqX0z.png";
       this.$store.state.newInfos.profileImage =
         this.$store.state.currentUser.profileImage ||
-        "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
+        "https://cdn-icons-png.flaticon.com/512/2017/2017715.png";
     },
     sampleAction(obj) {
       console.log("a action from mixin");

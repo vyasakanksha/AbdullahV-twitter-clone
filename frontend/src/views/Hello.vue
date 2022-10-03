@@ -35,7 +35,7 @@
         <TwitterButton
           clickEvent="toggleRegisterPage"
           h="40px"
-          w="370px"
+          w="300px"
           br="25px"
           text="Sign Up"
           bgType="blue"
@@ -45,7 +45,7 @@
         <router-link to="/login">
           <TwitterButton
             h="40px"
-            w="370px"
+            w="300px"
             br="25px"
             text="Log In"
             bgType="white"
@@ -96,6 +96,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2px;
 }
 
 .text-box {

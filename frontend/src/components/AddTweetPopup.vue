@@ -28,7 +28,7 @@
       ></AddTweet>
       <AddTweet
         cevent="editTweet"
-        v-if="Object.keys($store.state.editTweet).length > 1"
+        v-else-if="Object.keys($store.state.editTweet).length > 1"
         btntext="Edit"
         p="edit"
       ></AddTweet>
