@@ -16,12 +16,7 @@
         maxlength="280"
       ></textarea>
       <img
-        style="
-          width: 100%;
-          height: 275px;
-          border-radius: 17px;
-          margin: 20px 0px;
-        "
+        style="width: 100%; border-radius: 17px; margin: 20px 0px"
         v-if="$store.state.newTweet.image && isImage()"
         :src="$store.state.newTweet.image"
         alt=""
