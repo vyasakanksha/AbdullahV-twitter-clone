@@ -184,7 +184,7 @@ export default {
       ) {
         return this.$store.state.userForProfile.bannerImage;
       } else {
-        return "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png";
+        return "https://i.imgur.com/tnkqX0z.png";
       }
     },
     profilePhoto() {
@@ -194,7 +194,7 @@ export default {
       ) {
         return this.$store.state.userForProfile.profileImage;
       } else {
-        return "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
+        return "https://cdn-icons-png.flaticon.com/512/2017/2017715.png";
       }
     },
     tabClick(j) {
@@ -231,7 +231,6 @@ export default {
     const date = new Date(this.$store.state.userForProfile.joinedDate);
 
     this.$store.state.userForProfile.joinedDateLocal = date.toLocaleString();
-
   },
   watch: {
     $route(newValue, oldValue) {
@@ -291,7 +290,7 @@ export default {
 
 .banner-img {
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
   cursor: pointer;
 }
 
